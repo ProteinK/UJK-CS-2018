@@ -1,6 +1,6 @@
 CC=gcc
 
-all: silnia liczby_1-n tabliczka_mnozenia howto_printf
+all: silnia liczby_1-n tabliczka_mnozenia howto_printf howto_scanf
 
 silnia: silnia.o
 	@$(CC) -o $@.exe $^
@@ -25,6 +25,12 @@ howto_printf: howto_printf.o
 	@echo "Built howto_printf"
 
 howto_printf.o: howto_printf.c
+
+howto_scanf: howto_scanf.o
+	@$(CC) -o $@.exe $^
+	@echo "Built howto_scanf"
+
+howto_scanf.o: howto_scanf.c
 
 clean:
 	@$(RM) *.exe *.o
